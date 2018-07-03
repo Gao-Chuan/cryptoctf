@@ -1,0 +1,24 @@
+<b>{{ challenge.name }}</b> -- {{challenge.pt}} points
+
+<hr>
+<pre>
+{{challenge.description}}
+</pre>
+<hr>
+
+solved {{challenge.times}} times, early 30 solvers are: 
+<select>
+    {% for e in solvers %}
+    <option>{{ e }}</option>
+    {% endfor %}
+</select>
+
+Attachment: <a href="{% url 'adminEdit:download' id%}">{{challenge.attachment}}</a>
+
+<br>
+
+<form action="{% url 'submit:check' id%}" method="post">{% csrf_token %}
+    Flag: <input type="text" name="flag" />
+    <input type="submit" value="Submit" />
+</form>
+

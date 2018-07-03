@@ -1,0 +1,8 @@
+<ul>
+    {% for e in challenges %}
+    <li>{{ e.name }}<a href="{% url 'index:detail' e.id%}"><b>detail</b></a> <a href="{% url 'edit:edit' e.id %}"><b>edit</b></a> </li>
+    {% endfor %}
+</ul>
+<form action="{% url 'edit:add'%}" method="GET">{% csrf_token %}
+    <input type="submit" value="Add new challenges" />
+</form>

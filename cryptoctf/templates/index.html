@@ -1,0 +1,65 @@
+{% if not request.user.is_authenticated %}
+<div align="right">
+    <a href="{% url 'account:signin' %}"><b>Sign in</b></a>
+    or
+    <a href="{% url 'account:signup' %}"><b>Sign up</b></a>
+  </div>
+{% else %}
+<div align="right">
+    hello, {{ request.user.username }}! your point: {{ pt }}
+    <a href="{% url 'account:signout' %}"><b>Sign out</b></a>
+  </div>
+{% endif %}
+<!-- Paramecium -->
+
+<pre>
+ .o88b. d8888b. db    db d8888b. d888888b  .d88b.   .o88b. d888888b d88888b 
+d8P  Y8 88  `8D `8b  d8' 88  `8D `~~88~~' .8P  Y8. d8P  Y8 `~~88~~' 88'     
+8P      88oobY'  `8bd8'  88oodD'    88    88    88 8P         88    88ooo   
+8b      88`8b      88    88~~~      88    88    88 8b         88    88~~~   
+Y8b  d8 88 `88.    88    88         88    `8b  d8' Y8b  d8    88    88      
+ `Y88P' 88   YD    YP    88         YP     `Y88P'   `Y88P'    YP    YP      
+</pre>
+<hr>
+
+<b>Krill</b>
+<ul>
+    {% for e in krill %}
+    <li><a href="{% url 'index:detail' e.id%}"><b>{{ e.name }}</b></a> from <b>{{e.author}}</b></li>
+    {% endfor %}
+</ul>
+<hr>
+
+<b>Sardine</b>
+<ul>
+    {% for e in sardine %}
+    <li><a href="{% url 'index:detail' e.id%}"><b>{{ e.name }}</b></a> from <b>{{e.author}}</b></li>
+    {% endfor %}
+</ul>
+<hr>
+
+<b>Tuna</b>
+<ul>
+    {% for e in tuna %}
+    <li><a href="{% url 'index:detail' e.id%}"><b>{{ e.name }}</b></a> from <b>{{e.author}}</b></li>
+    {% endfor %}
+</ul>        
+<hr>
+
+<b>Shark</b>
+<ul>
+    {% for e in shark %}
+    <li><a href="{% url 'index:detail' e.id%}"><b>{{ e.name }}</b></a> from <b>{{e.author}}</b></li>
+    {% endfor %}
+</ul>
+        
+<hr>
+
+<b>Whale</b>
+<ul>
+    {% for e in whale %}
+    <li><a href="{% url 'index:detail' e.id%}"><b>{{ e.name }}</b></a> from <b>{{e.author}}</b></li>
+    {% endfor %}
+</ul>
+        
+<hr>

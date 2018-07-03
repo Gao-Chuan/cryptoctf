@@ -1,0 +1,7 @@
+<form action="{% url 'account:signup' %}" method="post">{% csrf_token %}
+    username: <input type="text" name="un" >
+    e-mail: <input type="text" name="em" >
+    country: <input type="text" name="ct" >
+    password: <input type="text" name="pw" >
+    <input type="submit" value="Submit" >
+</form>

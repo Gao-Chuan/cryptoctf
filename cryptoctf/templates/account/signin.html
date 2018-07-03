@@ -1,0 +1,5 @@
+<form action="{% url 'account:signin' %}" method="post">{% csrf_token %}
+    username: <input type="text" name="un" >
+    password: <input type="text" name="pw" >
+    <input type="submit" value="Submit" >
+</form>

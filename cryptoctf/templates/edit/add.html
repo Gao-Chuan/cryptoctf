@@ -1,0 +1,11 @@
+<form action="{% url 'edit:add' %}" method="POST" enctype="multipart/form-data">{% csrf_token %}
+    name: <input type="text" name="name" /> <br>
+    author: <input type="text" name="author"/> <br>
+    description: <textarea name="description" value = {{ challenge.description }}   cols="80"   rows="10"   ></textarea><br>
+     <!-- <input type="text" name="description" value = {{ challenge.description }}/> -->
+     {{ form }} <br>
+    group: <input type="text" name="group"/><br>
+    point: <input type="text" name="pt" /><br>
+    flag: <input type="text" name="flag" /><br>
+    <input type="submit" value="Submit" />
+</form>
