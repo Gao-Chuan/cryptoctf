@@ -1,0 +1,26 @@
+<head>
+    <meta charset="utf-8">
+    {% load static %}
+    <link rel="stylesheet" type="text/css" href="{% static 'sign.css' %}" />
+</head>
+
+<body>
+<center>
+<div class="box">
+    <center>
+    <form action="{% url 'account:signup' %}" method="post">{% csrf_token %}
+        Username:
+        <input type="text" name="un" >
+        E-mail:
+        <input type="text" name="em" >
+        Country:
+        <input type="text" name="ct" >
+        Password:
+        <input type="text" name="pw" >
+        <br/><br/>
+        <input type="submit" value="Submit" class="upload">
+    </form>
+    </center>
+</div>
+</center>
+</body>

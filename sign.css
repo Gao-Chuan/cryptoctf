@@ -1,0 +1,32 @@
+div.box {
+    width: 200px;
+    height: 240px;
+    position: absolute;
+    top: 150px;
+    left: 40%;
+    padding: 20px;
+    border: 1px solid;
+    border-color: #dddddd;
+    border-radius: 5px;
+}
+
+input {
+    width: 180px;
+    height: 30px;
+    border:1px solid;
+    border-color: #dddddd;
+    border-radius: 3px;
+}
+
+input.upload {
+    width: 100px;
+    height:30px;
+    background-color: lightseagreen;
+}
+
+input.upload:hover {
+    border: 1px solid;
+    border-color: #333333;
+    cursor: pointer;
+}
+
