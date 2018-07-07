@@ -8,11 +8,11 @@
   </head>
   <body>
     <ul class = "sidenav">
-      <li><a href="#Krill">Krill</a></li>
-      <li><a href="#Sardine">Sardine</a></li>
-      <li><a href="#Tuna">Tuna</a></li>
-      <li><a href="#Shark">Shark</a></li>
-      <li><a href="#Whale">Whale</a></li>
+      <li><a href="#krill">Krill</a></li>
+      <li><a href="#sardine">Sardine</a></li>
+      <li><a href="#tuna">Tuna</a></li>
+      <li><a href="#shark">Shark</a></li>
+      <li><a href="#whale">Whale</a></li>
       {% if not request.user.is_authenticated %}
       <li class = "right"><a href="{% url 'account:signin' %}"><b>Sign in</b></a></li>
         or
@@ -35,14 +35,9 @@
   </pre>
   <div>
     <hr>
-    <div id="krill" class="question_level"><b>Krill</b></div>
-    <ul>
-        {% for e in krill %}
-        <li><a href="{% url 'index:detail' e.id%}"><b>{{ e.name }}</b></a> from <b>{{e.author}}</b></li>
-        {% endfor %}
-    </ul>
 
-    <!-- <table class="table">
+    <table class="table">
+      <caption><div id="krill" class="question_level"><b>Krill</b></div></caption>
       <thead>
         <th class = "header">ID</th>
         <th class = "header">Challenge</th>
@@ -59,19 +54,18 @@
         </tr>
         {% endfor %}
       </tbody>
-    </table> -->
-
+    </table>
 
     <hr>
 
-    <div id="Sardine" class="question_level"><b>Sardine</b></div>
-    <ul>
-        {% for e in sardine %}
-        <li><a href="{% url 'index:detail' e.id%}"><b>{{ e.name }}</b></a> from <b>{{e.author}}</b></li>
-        {% endfor %}
-    </ul>
-
-    <!-- <table class="table">
+    <table class="table">
+      <caption><div id="sardine" class="question_level"><b>Sardine</b></div></caption>
+      <thead>
+        <th class = "header">ID</th>
+        <th class = "header">Challenge</th>
+        <th class = "header">Author</th>
+        <th class = "header">Points</th>
+      </thead>
       <tbody>
         {% for e in sardine %}
         <tr>
@@ -82,18 +76,19 @@
         </tr>
         {% endfor %}
       </tbody>
-    </table> -->
+    </table>
+
 
     <hr>
 
-    <div id="Tuna" class="question_level"><b>Tuna</b></div>
-    <ul>
-        {% for e in tuna %}
-        <li><a href="{% url 'index:detail' e.id%}"><b>{{ e.name }}</b></a> from <b>{{e.author}}</b></li>
-        {% endfor %}
-    </ul>
-
-    <!-- <table class="table">
+    <table class="table">
+      <caption><div id="tuna" class="question_level"><b>Tuna</b></div></caption>
+      <thead>
+        <th class = "header">ID</th>
+        <th class = "header">Challenge</th>
+        <th class = "header">Author</th>
+        <th class = "header">Points</th>
+      </thead>
       <tbody>
         {% for e in tuna %}
         <tr>
@@ -104,16 +99,20 @@
         </tr>
         {% endfor %}
       </tbody>
-    </table> -->
+    </table>
+
+
     <hr>
 
-    <div id="Shark" class="question_level"><b>Shark</b></div>
-    <ul>
-        {% for e in shark %}
-        <li><a href="{% url 'index:detail' e.id%}"><b>{{ e.name }}</b></a> from <b>{{e.author}}</b></li>
-        {% endfor %}
-    </ul>
-    <!-- <table class="table">
+
+    <table class="table">
+      <caption><div id="shark" class="question_level"><b>Shark</b></div></caption>
+      <thead>
+        <th class = "header">ID</th>
+        <th class = "header">Challenge</th>
+        <th class = "header">Author</th>
+        <th class = "header">Points</th>
+      </thead>
       <tbody>
         {% for e in shark %}
         <tr>
@@ -124,17 +123,19 @@
         </tr>
         {% endfor %}
       </tbody>
-    </table> -->
+    </table>
+
 
     <hr>
 
-    <div id="Whale" class="question_level"><b>Whale</b></div>
-    <ul>
-        {% for e in whale %}
-        <li><a href="{% url 'index:detail' e.id%}"><b>{{ e.name }}</b></a> from <b>{{e.author}}</b></li>
-        {% endfor %}
-    </ul>
-    <!-- <table class="table">
+    <table class="table">
+      <caption><div id="whale" class="question_level"><b>Whale</b></div></caption>
+      <thead>
+        <th class = "header">ID</th>
+        <th class = "header">Challenge</th>
+        <th class = "header">Author</th>
+        <th class = "header">Points</th>
+      </thead>
       <tbody>
         {% for e in whale %}
         <tr>
@@ -145,9 +146,10 @@
         </tr>
         {% endfor %}
       </tbody>
-    </table> -->
+    </table>
 
     <hr>
+
   </div>
   <body>
 </html>

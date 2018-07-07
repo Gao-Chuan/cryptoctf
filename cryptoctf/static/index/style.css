@@ -457,24 +457,26 @@ progress {
 	border: 0;
 	border-collapse: collapse;
 	border-spacing: 0;
-	width: 99%;
-	margin-left: 1%;
+	/* border-radius: 25px; */
+	width: 100%;
+	margin-left: 0%;
 }
 
 .table caption {
-	caption-side: bottom;
-	color: #777;
-	font-size: 85%
+	caption-side: top;
+	color: black;
 }
 
 .table caption,.table td,.table th {
 	padding: .3125rem;
-	text-align: left
+	text-align: center
 }
 
 .table td,.table th {
 	border: 0;
-	border-bottom: 1px solid #ddd
+	border-bottom: 1px solid #ddd;
+	border-top: 1px solid #ddd;
+	width:25%;
 }
 
 .table th {
