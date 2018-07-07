@@ -1,11 +1,30 @@
-<form action="{% url 'edit:add' %}" method="POST" enctype="multipart/form-data">{% csrf_token %}
-    name: <input type="text" name="name" /> <br>
-    author: <input type="text" name="author"/> <br>
-    description: <textarea name="description" value = {{ challenge.description }}   cols="80"   rows="10"   ></textarea><br>
-     <!-- <input type="text" name="description" value = {{ challenge.description }}/> -->
-     {{ form }} <br>
-    group: <input type="text" name="group"/><br>
-    point: <input type="text" name="pt" /><br>
-    flag: <input type="text" name="flag" /><br>
-    <input type="submit" value="Submit" />
-</form>
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Add challenge</title>
+    {% load static %}
+    <link rel="stylesheet" type="text/css" href="{% static 'edit/add.css' %}" />
+    <meta charset="utf-8">
+  </head>
+  <body>
+    <form action="{% url 'edit:add' %}" method="POST" enctype="multipart/form-data">{% csrf_token %}
+        name: <input type="text" name="name" /> <br>
+        author: <input type="text" name="author"/> <br>
+        description: <textarea name="description" value = {{ challenge.description }}   cols="80"   rows="10"   ></textarea><br>
+         <!-- <input type="text" name="description" value = {{ challenge.description }}/> -->
+         {{ form }} <br>
+        <!-- group: <input type="text" name="group"/><br> -->
+        group:
+        <select name="group">
+            <option value="krill">krill</option>
+            <option value="sardine">sardine</option>
+            <option value="tuna">tuna</option>
+            <option value="shark">shark</option>
+            <option value="whale">whale</option>
+        </select><br>
+        point: <input type="number" name="pt" /><br>
+        flag: <input type="text" name="flag" /><br>
+        <input type="submit" value="Submit" class="btn" />
+    </form>
+  </body>
+</html>

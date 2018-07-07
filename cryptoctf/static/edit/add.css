@@ -14,7 +14,7 @@ body {
 	color: #333;
 	font-size: 1rem;
 	line-height: 1.5;
-	margin: 0
+	margin: 5px;
 }
 
 body,button,input,select,textarea {
@@ -457,26 +457,23 @@ progress {
 	border: 0;
 	border-collapse: collapse;
 	border-spacing: 0;
-	/* border-radius: 25px; */
-	width: 100%;
-	margin-left: 0%;
+	width: 100%
 }
 
 .table caption {
-	caption-side: top;
-	color: black;
+	caption-side: bottom;
+	color: #777;
+	font-size: 85%
 }
 
 .table caption,.table td,.table th {
 	padding: .3125rem;
-	text-align: center
+	text-align: left
 }
 
 .table td,.table th {
 	border: 0;
-	border-bottom: 1px solid #ddd;
-	border-top: 1px solid #ddd;
-	width:25%;
+	border-bottom: 1px solid #ddd
 }
 
 .table th {
@@ -681,43 +678,4 @@ a.text-danger,a.text-muted,a.text-primary {
 
 .text-small {
 	font-size: 85%
-}
-
-ul.sidenav {
-    list-style-type: none;
-    margin: 0;
-    padding: 0;
-    overflow: hidden;
-    background-color: #333;
-}
-
-ul.sidenav li {float: left;}
-
-ul.sidenav li a, span {
-    display: block;
-    color: white;
-    text-align: center;
-    padding: 14px 16px;
-    text-decoration: none;
-}
-
-ul.sidenav li a:hover:not(.active) {background-color: #111;}
-
-ul.sidenav li a.active {background-color: #4CAF50;}
-
-ul.sidenav li.right {float: right;}
-
-@media screen and (max-width: 600px){
-    ul.sidenav li.right,
-    ul.sidenav li {float: none;}
-}
-
-.question_level{
-	border:2px solid #dddddd;
-	border-radius: 10px;
-	margin:3px;
-	padding:3px 20px;
-	background:#dddddd;
-	width: 100px;
-	text-align: center;
 }
