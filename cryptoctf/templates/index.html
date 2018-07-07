@@ -1,3 +1,4 @@
+<!DOCTYPE html>
 <html>
   <head>
     <meta charset="utf-8">
@@ -23,6 +24,7 @@
     </ul>
   <!-- Paramecium -->
 
+
   <pre>
    .o88b. d8888b. db    db d8888b. d888888b  .d88b.   .o88b. d888888b d88888b
   d8P  Y8 88  `8D `8b  d8' 88  `8D `~~88~~' .8P  Y8. d8P  Y8 `~~88~~' 88'
@@ -31,47 +33,121 @@
   Y8b  d8 88 `88.    88    88         88    `8b  d8' Y8b  d8    88    88
    `Y88P' 88   YD    YP    88         YP     `Y88P'   `Y88P'    YP    YP
   </pre>
-  <hr>
-  <b id="krill">Krill</b>
-  <ul>
-      {% for e in krill %}
-      <li><a href="{% url 'index:detail' e.id%}"><b>{{ e.name }}</b></a> from <b>{{e.author}}</b></li>
-      {% endfor %}
-  </ul>
-  <hr>
+  <div>
+    <hr>
+    <div id="krill" class="question_level"><b>Krill</b></div>
+    <ul>
+        {% for e in krill %}
+        <li><a href="{% url 'index:detail' e.id%}"><b>{{ e.name }}</b></a> from <b>{{e.author}}</b></li>
+        {% endfor %}
+    </ul>
 
-  <b id="Sardine">Sardine</b>
-  <ul>
-      {% for e in sardine %}
-      <li><a href="{% url 'index:detail' e.id%}"><b>{{ e.name }}</b></a> from <b>{{e.author}}</b></li>
-      {% endfor %}
-  </ul>
-  <hr>
+    <!-- <table class="table">
+      <thead>
+        <th class = "header">ID</th>
+        <th class = "header">Challenge</th>
+        <th class = "header">Author</th>
+        <th class = "header">Points</th>
+      </thead>
+      <tbody>
+        {% for e in krill %}
+        <tr>
+          <td>{{ e.id }}</td>
+          <td><a href="{% url 'index:detail' e.id%}">{{ e.name }}</a></td>
+          <td>{{ e.author }}</td>
+          <td>{{ e.pt }}</td>
+        </tr>
+        {% endfor %}
+      </tbody>
+    </table> -->
 
-  <b id="Tuna">Tuna</b>
-  <ul>
-      {% for e in tuna %}
-      <li><a href="{% url 'index:detail' e.id%}"><b>{{ e.name }}</b></a> from <b>{{e.author}}</b></li>
-      {% endfor %}
-  </ul>
-  <hr>
 
-  <b id="Shark">Shark</b>
-  <ul>
-      {% for e in shark %}
-      <li><a href="{% url 'index:detail' e.id%}"><b>{{ e.name }}</b></a> from <b>{{e.author}}</b></li>
-      {% endfor %}
-  </ul>
+    <hr>
 
-  <hr>
+    <div id="Sardine" class="question_level"><b>Sardine</b></div>
+    <ul>
+        {% for e in sardine %}
+        <li><a href="{% url 'index:detail' e.id%}"><b>{{ e.name }}</b></a> from <b>{{e.author}}</b></li>
+        {% endfor %}
+    </ul>
 
-  <b id="Whale">Whale</b>
-  <ul>
-      {% for e in whale %}
-      <li><a href="{% url 'index:detail' e.id%}"><b>{{ e.name }}</b></a> from <b>{{e.author}}</b></li>
-      {% endfor %}
-  </ul>
+    <!-- <table class="table">
+      <tbody>
+        {% for e in sardine %}
+        <tr>
+          <td>{{ e.id }}</td>
+          <td><a href="{% url 'index:detail' e.id%}">{{ e.name }}</a></td>
+          <td>{{ e.author }}</td>
+          <td>{{ e.pt }}</td>
+        </tr>
+        {% endfor %}
+      </tbody>
+    </table> -->
 
-  <hr>
+    <hr>
+
+    <div id="Tuna" class="question_level"><b>Tuna</b></div>
+    <ul>
+        {% for e in tuna %}
+        <li><a href="{% url 'index:detail' e.id%}"><b>{{ e.name }}</b></a> from <b>{{e.author}}</b></li>
+        {% endfor %}
+    </ul>
+
+    <!-- <table class="table">
+      <tbody>
+        {% for e in tuna %}
+        <tr>
+          <td>{{ e.id }}</td>
+          <td><a href="{% url 'index:detail' e.id%}">{{ e.name }}</a></td>
+          <td>{{ e.author }}</td>
+          <td>{{ e.pt }}</td>
+        </tr>
+        {% endfor %}
+      </tbody>
+    </table> -->
+    <hr>
+
+    <div id="Shark" class="question_level"><b>Shark</b></div>
+    <ul>
+        {% for e in shark %}
+        <li><a href="{% url 'index:detail' e.id%}"><b>{{ e.name }}</b></a> from <b>{{e.author}}</b></li>
+        {% endfor %}
+    </ul>
+    <!-- <table class="table">
+      <tbody>
+        {% for e in shark %}
+        <tr>
+          <td>{{ e.id }}</td>
+          <td><a href="{% url 'index:detail' e.id%}">{{ e.name }}</a></td>
+          <td>{{ e.author }}</td>
+          <td>{{ e.pt }}</td>
+        </tr>
+        {% endfor %}
+      </tbody>
+    </table> -->
+
+    <hr>
+
+    <div id="Whale" class="question_level"><b>Whale</b></div>
+    <ul>
+        {% for e in whale %}
+        <li><a href="{% url 'index:detail' e.id%}"><b>{{ e.name }}</b></a> from <b>{{e.author}}</b></li>
+        {% endfor %}
+    </ul>
+    <!-- <table class="table">
+      <tbody>
+        {% for e in whale %}
+        <tr>
+          <td>{{ e.id }}</td>
+          <td><a href="{% url 'index:detail' e.id%}">{{ e.name }}</a></td>
+          <td>{{ e.author }}</td>
+          <td>{{ e.pt }}</td>
+        </tr>
+        {% endfor %}
+      </tbody>
+    </table> -->
+
+    <hr>
+  </div>
   <body>
 </html>

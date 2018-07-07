@@ -1,12 +1,23 @@
-<form action="{% url 'edit:edit' id%}" method="post" enctype="multipart/form-data">{% csrf_token %}
-    name: <input type="text" name="name" value = {{ challenge.name }}> <br>
-    author: <input type="text" name="author" value = {{ challenge.author }}> <br>
-    description: <textarea name="description"   cols="80"   rows="10"   >{{ challenge.description }}</textarea><br>
-     <!-- <input type="text" name="description" value = {{ challenge.description }}/> -->
-    group: <input type="text" name="group" value = {{ challenge.group }}><br>
-    {{form}}
-    point: <input type="text" name="pt" value = {{ challenge.pt }}><br>
-    flag: <input type="text" name="flag" value = {{ challenge.flag }}><br>
-    delete: <input type="radio" name="delete" value="yes">yes <input type="radio" name="delete" value="no"  checked="checked" >no<br>
-    <input type="submit" value="Submit" />
-</form>
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>{{ challenge.name }}</title>
+    {% load static %}
+    <link rel="stylesheet" type="text/css" href="{% static 'edit/edit.css' %}" />
+    <meta charset="utf-8">
+  </head>
+  <body>
+    <form action="{% url 'edit:edit' id%}" method="post" enctype="multipart/form-data">{% csrf_token %}
+        name: <input type="text" name="name" value = {{ challenge.name }}> <br>
+        author: <input type="text" name="author" value = {{ challenge.author }}> <br>
+        description: <textarea name="description"   cols="80"   rows="10"   >{{ challenge.description }}</textarea><br>
+         <!-- <input type="text" name="description" value = {{ challenge.description }}/> -->
+        group: <input type="text" name="group" value = {{ challenge.group }}><br>
+        {{form}}
+        point: <input type="text" name="pt" value = {{ challenge.pt }}><br>
+        flag: <input type="text" name="flag" value = {{ challenge.flag }}><br>
+        delete: <input type="radio" name="delete" value="yes">yes <input type="radio" name="delete" value="no"  checked="checked" >no<br>
+        <input type="submit" value="Submit" />
+    </form>
+  </body>
+</html>

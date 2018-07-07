@@ -1,8 +1,19 @@
-<ul>
-    {% for e in challenges %}
-    <li>{{ e.name }}<a href="{% url 'index:detail' e.id%}"><b>detail</b></a> <a href="{% url 'edit:edit' e.id %}"><b>edit</b></a> </li>
-    {% endfor %}
-</ul>
-<form action="{% url 'edit:add'%}" method="GET">{% csrf_token %}
-    <input type="submit" value="Add new challenges" />
-</form>
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>{{ challenge.name }}</title>
+    {% load static %}
+    <link rel="stylesheet" type="text/css" href="{% static 'edit/list.css' %}" />
+    <meta charset="utf-8">
+  </head>
+  <body>
+    <form action="{% url 'edit:add'%}" method="GET">{% csrf_token %}
+        <input type="submit" value="Add new challenges" class="btn" />
+    </form>
+    <ul>
+        {% for e in challenges %}
+        <li>{{ e.name }}<a href="{% url 'index:detail' e.id%}"><b> detail</b></a> <a href="{% url 'edit:edit' e.id %}"><b>edit</b></a> </li>
+        {% endfor %}
+    </ul>
+  </body>
+</html>
