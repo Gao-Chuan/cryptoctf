@@ -689,6 +689,10 @@ ul.sidenav {
     padding: 0;
     overflow: hidden;
     background-color: #333;
+		width: 100%;
+		height: 50px;
+		position: fixed;
+		top:0;
 }
 
 ul.sidenav li {float: left;}
@@ -718,6 +722,9 @@ ul.sidenav li.right {float: right;}
 	margin:3px;
 	padding:3px 20px;
 	background:#dddddd;
-	width: 100px;
+	width: 200px;
 	text-align: center;
+}
+.bottom{
+	background-color: red;
 }

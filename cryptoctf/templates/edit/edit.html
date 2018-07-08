@@ -12,7 +12,16 @@
         author: <input type="text" name="author" value = {{ challenge.author }}> <br>
         description: <textarea name="description"   cols="80"   rows="10"   >{{ challenge.description }}</textarea><br>
          <!-- <input type="text" name="description" value = {{ challenge.description }}/> -->
-        group: <input type="text" name="group" value = {{ challenge.group }}><br>
+        <!-- group: <input type="text" name="group" value = {{ challenge.group }}><br> -->
+        group:
+        <select name="group" value = {{ challenge.group }}>
+            <option value="krill">krill</option>
+            <option value="sardine">sardine</option>
+            <option value="tuna">tuna</option>
+            <option value="shark">shark</option>
+            <option value="whale">whale</option>
+        </select><br>
+
         {{form}}
         point: <input type="text" name="pt" value = {{ challenge.pt }}><br>
         flag: <input type="text" name="flag" value = {{ challenge.flag }}><br>

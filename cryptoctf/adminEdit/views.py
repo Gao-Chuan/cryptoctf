@@ -1,5 +1,5 @@
-from django.shortcuts import render, redirect, reverse  
-from django.contrib.auth.decorators import login_required  
+from django.shortcuts import render, redirect, reverse
+from django.contrib.auth.decorators import login_required
 from django.contrib.auth import authenticate, login
 from django.http import HttpResponse
 from django.http import StreamingHttpResponse
@@ -21,7 +21,7 @@ def download(request, id):
                     yield c
                 else:
                     break
-    
+
     challenge = models.challengeinfo.objects.get(id = id)
     attachment = challenge.attachment
     filename = './media/'+attachment
@@ -29,7 +29,7 @@ def download(request, id):
 
     response['Content-Type'] = 'application/octet-stream'
     response['Content-Disposition'] = 'attachment;filename="{0}"'.format(filename)
-    
+
     return response
 
 
@@ -45,7 +45,7 @@ def do_login(request, ):
             return redirect(reverse('edit:list'))
         else:
             return HttpResponse('hello')
-        
+
     else:
         return render(request, 'edit/login.html', {})
 
@@ -53,8 +53,8 @@ def do_login(request, ):
 def challengeList(request):
     if request.user.username != 'admin':
         return HttpResponse('hello')
-    challenges = models.challengeinfo.objects.all().values('name', 'id')
-    
+    challenges = models.challengeinfo.objects.all().values('name', 'id', 'group', 'pt')
+
     try:
         id = models.challengeinfo.objects.latest('id')
         id.value()
@@ -66,13 +66,13 @@ def challengeList(request):
 def add(request, ):
     if request.user.username != 'admin':
         return HttpResponse('hello')
-    
+
     try:
         id = models.challengeinfo.objects.latest('id')
         id.value()
     except:
         id = -1
-    
+
     if request.method == 'GET':
         form = UploadFileForm()
         return render(request, 'edit/add.html', {'challenge':{}, 'id':id+1, 'form':form})
@@ -83,15 +83,15 @@ def add(request, ):
     pt = request.POST['pt']
     flag = request.POST['flag']
     author = request.POST['author']
-    
+
     form = UploadFileForm(request.POST, request.FILES)
     if form.is_valid():
         handle_upload_file(name, request.FILES['file'])
         attachment = name + request.FILES.get("file", None).name
     else:
         attachment = None
-    
-    models.challengeinfo.objects.create(name = name, description = description, group = group, pt = pt, flag = flag, times = 0, attachment = attachment, author = author)    
+
+    models.challengeinfo.objects.create(name = name, description = description, group = group, pt = pt, flag = flag, times = 0, attachment = attachment, author = author)
     return redirect(reverse('edit:list'))
 
 
@@ -108,7 +108,7 @@ def edit(request, id):
     if delete == 'yes':
         models.challengeinfo.objects.filter(id = id).delete()
         return redirect(reverse('edit:list'))
-    
+
 
     name = request.POST['name']
     description = request.POST['description']
@@ -116,7 +116,7 @@ def edit(request, id):
     pt = request.POST['pt']
     flag = request.POST['flag']
     author = request.POST['author']
-    
+
     form = UploadFileForm(request.POST, request.FILES)
     if form.is_valid():
         handle_upload_file(name, request.FILES['file'])
@@ -124,7 +124,7 @@ def edit(request, id):
     else:
         attachment = None
 
-    try:    
+    try:
         obj = models.challengeinfo.objects.get(id = id)
         obj.name = name
         obj.description = description
