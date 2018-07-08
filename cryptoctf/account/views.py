@@ -1,4 +1,4 @@
-from django.shortcuts import render,redirect, reverse 
+from django.shortcuts import render,redirect, reverse
 from django.contrib.auth.models import User
 from django.contrib.auth import authenticate, login, logout
 from .models import userinfo
@@ -15,6 +15,9 @@ def signin(request, ):
     user = authenticate(request, username = un, password = pw)
     if user is not None:
         login(request, user)
+    else:
+        error_msg = "Wrong username or password."
+        return render(request, 'account/signin.html', {'error_msg':error_msg})
 
     return redirect(reverse('index:index'))
 
@@ -26,12 +29,13 @@ def signup(request, ):
     em = request.POST['em']
     ct = request.POST['ct']
     pw = request.POST['pw']
-    
+
     try:
         user = userinfo.objects.create_user(un, em, pw, pt = 0, country = ct)
         user.save()
     except Exception as e:
-        return HttpResponse('try a new uername plz.')
+        error_msg = "Try a new username plz."
+        return render(request, 'account/signup.html', {'error_msg':error_msg})
 
     user = authenticate(request, username = un, password = pw)
     if user is not None:

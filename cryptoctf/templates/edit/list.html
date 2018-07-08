@@ -10,10 +10,29 @@
     <form action="{% url 'edit:add'%}" method="GET">{% csrf_token %}
         <input type="submit" value="Add new challenges" class="btn" />
     </form>
-    <ul>
+
+    <table class="table">
+      <thead>
+        <th class = "header">ID</th>
+        <th class = "header">Challenge</th>
+        <th class = "header"></th>
+        <th class = "header"></th>
+        <th class = "header">Group</th>
+        <th class = "header">Points</th>
+      </thead>
+      <tbody>
         {% for e in challenges %}
-        <li>{{ e.name }}<a href="{% url 'index:detail' e.id%}"><b> detail</b></a> <a href="{% url 'edit:edit' e.id %}"><b>edit</b></a> </li>
+        <tr>
+          <td>{{ e.id }}</td>
+          <td>{{ e.name }}</td>
+          <td><a href="{% url 'index:detail' e.id%}"><b>detail</b></td>
+          <td><a href="{% url 'edit:edit' e.id %}"><b>edit</b></td>
+          <td>{{ e.group }}</td>
+          <td>{{ e.pt }}</td>
+        </tr>
         {% endfor %}
-    </ul>
+      </tbody>
+    </table>
+
   </body>
 </html>
