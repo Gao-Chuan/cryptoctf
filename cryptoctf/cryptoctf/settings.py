@@ -23,7 +23,7 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SECRET_KEY = 'ti_yd#txhu&+$0#cju36ue+0g+g9ge$v2#vvftig-r7@j4t*95'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
 ALLOWED_HOSTS = ['cryptoctf.club',  '172.245.170.110', '127.0.0.1']
 
