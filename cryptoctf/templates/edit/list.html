@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>{{ challenge.name }}</title>
+    <title>List | Cryptoctf</title>
     {% load static %}
     <link rel="stylesheet" type="text/css" href="{% static 'edit/list.css' %}" />
     <meta charset="utf-8">
@@ -33,6 +33,9 @@
         {% endfor %}
       </tbody>
     </table>
-
+    <div class="footer">
+      <hr>
+      <a href="/">Return to homepage</a>
+    </div>
   </body>
 </html>

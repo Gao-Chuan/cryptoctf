@@ -725,6 +725,16 @@ ul.sidenav li.right {float: right;}
 	width: 200px;
 	text-align: center;
 }
-.bottom{
-	background-color: red;
+
+.footer{
+	margin-left: 10%;
+	margin-right: 10%;
+	text-align: right;
+}
+
+#contributors{
+	margin: 1rem;
+}
+#contributors p{
+	margin: 1rem;
 }

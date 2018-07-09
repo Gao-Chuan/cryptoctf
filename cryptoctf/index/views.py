@@ -28,7 +28,7 @@ def index(request, ):
     tuna = []
     for t in tmpt:
         tuna.append(t.__dict__)
-    
+
     try:
         tmps =  models.challengeinfo.objects.filter(group = 'shark')
     except:
@@ -36,7 +36,7 @@ def index(request, ):
     shark = []
     for s in tmps:
         shark.append(s.__dict__)
-    
+
     try:
         tmpw = models.challengeinfo.objects.filter(group = 'whale')
     except:
@@ -55,3 +55,6 @@ def detail(request, id):
     challenge = models.challengeinfo.objects.get(id = int(id))
     solvers = json.loads(challenge.solvers)['solvers']
     return render(request, 'detail.html', {'challenge':challenge.__dict__, 'id':id, 'solvers':solvers})
+
+def contributors(request, ):
+    return render(request, 'contributors.html')
