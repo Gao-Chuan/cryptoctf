@@ -24,7 +24,7 @@ with open('secret.key', 'r') as f:
     SECRET_KEY = f.read()
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
 ALLOWED_HOSTS = ['cryptoctf.club',  '172.245.170.110', '127.0.0.1']
 
