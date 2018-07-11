@@ -679,3 +679,8 @@ a.text-danger,a.text-muted,a.text-primary {
 .text-small {
 	font-size: 85%
 }
+.footer{
+	margin-left: 10%;
+	margin-right: 10%;
+	text-align: right;
+}

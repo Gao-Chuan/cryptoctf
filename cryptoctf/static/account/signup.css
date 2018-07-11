@@ -1051,3 +1051,8 @@ body.login {
 .login .password-reset-link {
     text-align: center;
 }
+.footer{
+	margin-left: 10%;
+	margin-right: 10%;
+	text-align: right;
+}

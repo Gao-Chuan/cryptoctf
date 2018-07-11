@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>{{ challenge.name }}</title>
+    <title>{{ challenge.name }} | Cryptoctf</title>
     {% load static %}
     <link rel="stylesheet" type="text/css" href="{% static 'edit/edit.css' %}" />
     <meta charset="utf-8">
@@ -28,5 +28,9 @@
         delete: <input type="radio" name="delete" value="yes">yes <input type="radio" name="delete" value="no"  checked="checked" >no<br>
         <input type="submit" value="Submit" />
     </form>
+    <div class="footer">
+      <hr>
+      <a href="/">Return to homepage</a>
+    </div>
   </body>
 </html>

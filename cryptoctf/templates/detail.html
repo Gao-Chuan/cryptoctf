@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>{{ challenge.name }}</title>
+    <title>{{ challenge.name }} | Cryptoctf</title>
     {% load static %}
     <link rel="stylesheet" type="text/css" href="{% static 'detail/style.css' %}" />
     <meta charset="utf-8">
@@ -30,5 +30,9 @@
         Flag: <input type="text" name="flag" />
         <input type="submit" value="Submit" class="btn"/>
     </form>
+    <div class="footer">
+      <hr>
+      <a href="/">Return to homepage</a>
+    </div>
   </body>
 </html>

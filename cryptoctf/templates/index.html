@@ -20,6 +20,9 @@
       <li class = "right"><a href="{% url 'account:signup' %}"><b>Sign up</b></a></li>
       {% else %}
       <li class = "right"><a href="{% url 'account:signout' %}"><b>Sign out</b></a></li>
+        {% if request.user.is_superuser %}
+        <li class = "right"><a href="{% url 'edit:list' %}"><b>Edit</b></a></li>
+        {% endif %}
       <li class = "right"><span>hello, {{ request.user.username }}! your point: {{ pt }}</span></li>
       {% endif %}
     </ul>
@@ -27,6 +30,7 @@
 
   <div style="height:50px;"></div>
   <!-- height of navigation. -->
+
   <pre>
    .o88b. d8888b. db    db d8888b. d888888b  .d88b.   .o88b. d888888b d88888b
   d8P  Y8 88  `8D `8b  d8' 88  `8D `~~88~~' .8P  Y8. d8P  Y8 `~~88~~' 88'
@@ -155,11 +159,9 @@
     <hr>
 
   </div>
-  <!-- <div class = "bottom">
-    authors
-    <div>
-      authors
-    </div> -->
+  <div class="footer">
+    <hr>
+    <a href="{% url 'index:contributors'%}">Contributors</a>
   </div>
   <body>
 </html>
